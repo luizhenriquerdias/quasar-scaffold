@@ -1,18 +1,12 @@
-import Vue from 'vue';
 import { Notify } from 'quasar';
 
 Notify.setDefaults({
-	timeout: 5000,
+	timeout: 2000,
 	position: 'bottom'
 });
 
-export const $notify = (message, type) => {
+export const notify = (message, type = 'positive') => {
 	if (!message)
 		return;
-	if (typeof message === 'object')
-		Notify.create(message);
-	else
-		Notify.create({ message, type: type || 'positive' });
+	Notify.create({ message, type });
 };
-
-Vue.prototype.$notify = $notify;

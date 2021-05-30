@@ -20,7 +20,9 @@
 </template>
 
 <script>
-export default {
+import { defineComponent } from 'vue';
+
+export default defineComponent({
 	name: 'EssentialLink',
 	props: {
 		title: {
@@ -43,5 +45,5 @@ export default {
 			default: ''
 		}
 	}
-};
+});
 </script>
